@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class EndGameEventCon : MonoBehaviour {
 
     GameObject[] placesList;
+    GameObject[] puzzlesList;
     public GameObject timeObj;
     float gameTime;
     bool allisCorrect;
     bool timesUp;
     public GameObject loseScreen;
     public GameObject winScreen;
-    
+    public GameObject time_scorer;
 
 	// Use this for initialization
 	void Start () {
         placesList = GameObject.FindGameObjectsWithTag("place");
-        
+        puzzlesList = GameObject.FindGameObjectsWithTag("puzzle");
         timesUp = false;
         allisCorrect = false;
         loseScreen.active = false;
@@ -50,10 +51,21 @@ public class EndGameEventCon : MonoBehaviour {
         if (allisCorrect && !timesUp)
         {
             winScreen.active = true;
+            timeObj.GetComponent<TimerController>().Stop();
+            foreach (var item in puzzlesList)
+            {
+                item.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            time_scorer.SetActive(true);
+            time_scorer.GetComponent<Text>().text = timeObj.GetComponent<TimerController>().timerText.text;
         }
         if(timesUp)
         {
             loseScreen.active = true;
+            foreach (var item in puzzlesList)
+            {
+                item.GetComponent<BoxCollider2D>().enabled = false;
+            }
         }
     }
 }
