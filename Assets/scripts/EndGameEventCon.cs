@@ -14,19 +14,24 @@ public class EndGameEventCon : MonoBehaviour {
     public GameObject loseScreen;
     public GameObject winScreen;
     public GameObject time_scorer;
+    public GameObject TryButton;
+    public GameObject QuitButton;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         placesList = GameObject.FindGameObjectsWithTag("place");
         puzzlesList = GameObject.FindGameObjectsWithTag("puzzle");
         timesUp = false;
         allisCorrect = false;
-        loseScreen.active = false;
-        winScreen.active = false;
+        loseScreen.SetActive(false);
+        winScreen.SetActive(false);
+        TryButton.SetActive(false);
+        QuitButton.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
+    
+    // Update is called once per frame
+    public void Update () {
         gameTime = timeObj.GetComponent<TimerController>().secondsLimit;
         if (gameTime > 0)
         {
@@ -50,7 +55,9 @@ public class EndGameEventCon : MonoBehaviour {
 
         if (allisCorrect && !timesUp)
         {
-            winScreen.active = true;
+            winScreen.SetActive(true);
+            TryButton.SetActive(true);
+            QuitButton.SetActive(true);
             timeObj.GetComponent<TimerController>().Stop();
             foreach (var item in puzzlesList)
             {
@@ -61,7 +68,9 @@ public class EndGameEventCon : MonoBehaviour {
         }
         if(timesUp)
         {
-            loseScreen.active = true;
+            loseScreen.SetActive(true);
+            TryButton.SetActive(true);
+            QuitButton.SetActive(true);
             foreach (var item in puzzlesList)
             {
                 item.GetComponent<BoxCollider2D>().enabled = false;

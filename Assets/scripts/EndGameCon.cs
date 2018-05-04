@@ -14,7 +14,7 @@ public class EndGameCon : MonoBehaviour {
 		
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "puzzle") currPuzzle = collision.gameObject;
 	}
@@ -33,11 +33,13 @@ public class EndGameCon : MonoBehaviour {
 			isCorrect = true;
 		}
 		else isCorrect = false;
-        this.GetComponent<BoxCollider2D>().enabled = false;
-        this.GetComponent<CapsuleCollider2D>().enabled = false;
-        this.GetComponent<BoxCollider2D>().enabled = true;
-        this.GetComponent<CapsuleCollider2D>().enabled = true;
-    }
+
+		//Debug.Log("End game: " + this.name);
+		this.GetComponent<BoxCollider2D>().enabled = false;
+		this.GetComponent<CapsuleCollider2D>().enabled = false;
+		this.GetComponent<BoxCollider2D>().enabled = true;
+		this.GetComponent<CapsuleCollider2D>().enabled = true;
+	}
 
 	// Update is called once per frame
 	void Update () {

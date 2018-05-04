@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 334545662}
   - component: {fileID: 334545661}
   - component: {fileID: 334545660}
+  - component: {fileID: 334545663}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -431,6 +432,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 334545658}
+--- !u!114 &334545663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 334545658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d692151e656564585edfaf723fb4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnImageEng: {fileID: 21300000, guid: 34da1d837a02f014ca302a97b029a193, type: 3}
+  BtnImagePl: {fileID: 21300000, guid: 34da1d837a02f014ca302a97b029a193, type: 3}
+  BtnImageGer: {fileID: 21300000, guid: 34da1d837a02f014ca302a97b029a193, type: 3}
 --- !u!1 &366416435
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +456,6 @@ GameObject:
   - component: {fileID: 366416436}
   - component: {fileID: 366416438}
   - component: {fileID: 366416437}
-  - component: {fileID: 366416439}
   m_Layer: 5
   m_Name: Starttxt
   m_TagString: Untagged
@@ -506,20 +520,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366416435}
---- !u!114 &366416439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 366416435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d692151e656564585edfaf723fb4e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PolishText: Uruchom
-  EnglishText: Start
-  GermanyText: GERMANY BITCHEZ!!
 --- !u!1 &515386826
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 515386830}
   - component: {fileID: 515386829}
   - component: {fileID: 515386828}
+  - component: {fileID: 515386831}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -642,6 +643,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 515386826}
+--- !u!114 &515386831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515386826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d692151e656564585edfaf723fb4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnImageEng: {fileID: 21300000, guid: cbd2ddcab74a4034782cc85fee16ccc6, type: 3}
+  BtnImagePl: {fileID: 21300000, guid: cbd2ddcab74a4034782cc85fee16ccc6, type: 3}
+  BtnImageGer: {fileID: 21300000, guid: cbd2ddcab74a4034782cc85fee16ccc6, type: 3}
 --- !u!1 &711289402
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,9 +812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d692151e656564585edfaf723fb4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PolishText: "Wyjd\u017A"
-  EnglishText: Exit
-  GermanyText: HENDEHOOOH SHNELA!!
+  BtnImageEng: {fileID: 21300000, guid: cbd2ddcab74a4034782cc85fee16ccc6, type: 3}
+  BtnImagePl: {fileID: 21300000, guid: 6cf3fbd7bdee5c3428456302bc6ecea0, type: 3}
+  BtnImageGer: {fileID: 0}
 --- !u!1 &849125256
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +925,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 904500969}
   m_OnClick:
     m_PersistentCalls:
@@ -1332,7 +1347,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1776378627}
   m_OnClick:
     m_PersistentCalls:

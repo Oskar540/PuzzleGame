@@ -14,13 +14,15 @@ public class PlaceMagnet : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		magnetedObj = collision.gameObject;
-	}
+        //collision.gameObject.GetComponent<Transform>().position = (new Vector3(this.transform.position.x, this.transform.position.y, -2.770827f));
 
-	private void OnTriggerStay2D(Collider2D collision)
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
 	{
 		magnetedObj = collision.gameObject;
-		//Debug.Log(collision.name + " magneted with " + this.name);
-		collision.gameObject.GetComponent<Transform>().position = (new Vector3(this.transform.position.x, this.transform.position.y, collision.transform.position.z));
+		Debug.Log(collision.name + " magneted with " + this.name);
+		collision.gameObject.GetComponent<Transform>().position = (new Vector3(this.transform.position.x, this.transform.position.y, -2.770827f));
 	}
 
 	// Update is called once per frame

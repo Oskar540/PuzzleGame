@@ -43,6 +43,7 @@ public class puzzleController : MonoBehaviour {
             this.transform.position = collision.transform.position;
             isLocked = true;
         }
+        
     }
 
     //bool isGameOver()

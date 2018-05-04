@@ -1,24 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class TimerController : MonoBehaviour {
-
+public class TimerController : MonoBehaviour
+{
     public float secondsLimit = 60;
     private float timer;
     public Text timerText;
-    bool isStopped = false;
+    private bool isStopped = false;
 
+    // Use this for initialization
+    private void Start()
+    {
+    }
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    private void Update()
     {
         if (!isStopped)
         {
@@ -28,19 +24,15 @@ public class TimerController : MonoBehaviour {
             timer += Time.deltaTime;
             if (secondsLimit > 0 && timer >= 1)
             {
-
                 secondsLimit--;
                 timer = 0;
             }
             //Debug.Log(secondsLimit);
         }
-	}
-    
+    }
+
     public void Stop()
     {
         isStopped = true;
     }
-
-
-
 }

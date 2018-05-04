@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SwipeFinger : MonoBehaviour
 {
-    Vector2 firstPressPos;
-    Vector2 secondPressPos;
-    Vector2 currentSwipe;
+    private Vector2 firstPressPos;
+    private Vector2 secondPressPos;
+    private Vector2 currentSwipe;
 
     public enum SwipeDirection { none, up, down, left, right }
 
@@ -60,7 +58,6 @@ public class SwipeFinger : MonoBehaviour
                     enumSwipe = SwipeDirection.right;
                 }
             }
-
         }
     }
 }

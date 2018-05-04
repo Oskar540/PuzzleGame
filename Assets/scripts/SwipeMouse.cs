@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SwipeMouse : MonoBehaviour {
+public class SwipeMouse : MonoBehaviour
+{
+    private Vector2 firstPressPos;
+    private Vector2 secondPressPos;
+    private Vector2 currentSwipe;
+    public float noneSwipeLimit;
 
-    Vector2 firstPressPos;
-    Vector2 secondPressPos;
-    Vector2 currentSwipe;
-
-    public enum SwipeDirection {none, up, down, left, right}
+    public enum SwipeDirection { none, up, down, left, right }
 
     public static SwipeDirection enumSwipe;
-
 
     private void Update()
     {
@@ -36,27 +34,35 @@ public class SwipeMouse : MonoBehaviour {
             //normalize the 2d vector
             currentSwipe.Normalize();
 
-            //swipe upwards
-            if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            {
-                enumSwipe = SwipeDirection.up;
-            }
-            //swipe down
-            else if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            {
-                enumSwipe = SwipeDirection.down;
-            }
-            //swipe left
-            else if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            {
-                enumSwipe = SwipeDirection.left;
-            }
-            //swipe right
-            else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            {
-                enumSwipe = SwipeDirection.right;
-            }
+
+            
+                if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+                {
+                    
+                    enumSwipe = SwipeDirection.up;
+                }
+                //swipe down
+                else if (currentSwipe.y < 0 && currentSwipe.x > -0.5f)
+                {
+                    
+                    enumSwipe = SwipeDirection.down;
+                }
+            
+
+            
+                if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                {
+                    
+                    enumSwipe = SwipeDirection.left;
+                }
+                //swipe right
+                else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                {
+                    
+                    enumSwipe = SwipeDirection.right;
+                }
+            
+
         }
-        
     }
 }

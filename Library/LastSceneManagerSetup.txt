@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/puzzles1.unity
+- path: Assets/Scenes/puzzles2_edit.unity
   isLoaded: 1
   isActive: 1

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - puzzle
   - place
+  - EventSys
   layers:
   - Default
   - TransparentFX

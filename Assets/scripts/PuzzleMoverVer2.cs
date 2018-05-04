@@ -33,7 +33,7 @@ public class PuzzleMoverVer2 : MonoBehaviour {
 	}
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
 	{
 		//Debug.Log("trigger");
 		if (!Input.GetMouseButton(0) && collision.gameObject.tag == "puzzle")
@@ -47,18 +47,25 @@ public class PuzzleMoverVer2 : MonoBehaviour {
 			collision.GetComponent<PuzzleMoverVer2>().isUploaded = false;
 		}
 
+        this.transform.position.Set(this.transform.position.x, this.transform.position.y, -2.770827f);
+
         if (!Input.GetMouseButton(0) && collision.gameObject.tag == "place")
         {
             //Debug.Log("Current puzzle: " + this.gameObject.name + " for " + collision.gameObject.name);
             collision.gameObject.GetComponent<EndGameCon>().currPuzzle = this.gameObject;
+            this.transform.position.Set(this.transform.position.x,
+                                         this.transform.position.y,
+                                         -2.770827f);
         }
 
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!Input.GetMouseButton(0) && collision.gameObject.tag == "place")
         {
-            Debug.Log("Current puzzle: " + this.gameObject.name + " for " + collision.gameObject.name);
+            //Debug.Log("Current puzzle: " + this.gameObject.name + " for " + collision.gameObject.name);
             collision.gameObject.GetComponent<PlaceMagnet>().magnetedObj = this.gameObject;
         }
     }

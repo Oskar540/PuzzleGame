@@ -1,26 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PuzzleMover : MonoBehaviour {
+public class PuzzleMover : MonoBehaviour
+{
+    private float x;
+    private float y;
 
-    float x;
-    float y;
-
-    bool isUploaded;
+    private bool isUploaded;
 
     private Vector3 startPos;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-    
+    // Use this for initialization
+    private void Start()
+    {
+    }
 
     // Update is called once per frame
-    void Update () {
-
+    private void Update()
+    {
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
 
@@ -30,12 +26,12 @@ public class PuzzleMover : MonoBehaviour {
             isUploaded = true;
             //Debug.Log("Position: " + startPos);
         }
-	}
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("trigger");
-       if(collision.gameObject.tag == "puzzle")
+        if (collision.gameObject.tag == "puzzle")
         {
             //Debug.Log("Collision with: " + collision.gameObject.name);
             collision.gameObject.transform.position = startPos;
@@ -45,7 +41,7 @@ public class PuzzleMover : MonoBehaviour {
         }
     }
 
-    void OnMouseDrag()
+    private void OnMouseDrag()
     {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3((float)x, (float)y, 16.01f));
     }

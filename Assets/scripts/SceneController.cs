@@ -1,27 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour {
-
-    
-
-    Scene currScene;
+public class SceneController : MonoBehaviour
+{
+    private Scene currScene;
     public string wantedScene;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    private void Start()
     {
         currScene = SceneManager.GetActiveScene();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
 
-	}
+    // Update is called once per frame
+    private void Update()
+    {
+    }
 
     public void GallerySceneLoader()
     {
